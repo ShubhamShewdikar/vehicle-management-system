@@ -11,7 +11,7 @@ const Login = ({setCurrentUser}) => {
     const handleLogin = () => {
         if(loginInfo.email === email && loginInfo.password === password){
             setCurrentUser('Shubham')
-            navigate("/dashboard")
+            navigate("/")
         }
     }
   return (

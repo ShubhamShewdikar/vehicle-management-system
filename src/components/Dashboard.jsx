@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Dashboard = ({currentUser}) => {
+const Dashboard = () => {
   return (
     <div>
-        Hi {currentUser}, Welcome to Dashboard !!
+        Hi Team, Welcome to Dashboard !!
     </div>
   )
 }
