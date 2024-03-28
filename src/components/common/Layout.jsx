@@ -1,26 +1,33 @@
-import React from 'react'
-import Sidebar from './Sidebar'
-import Header from './Header'
-import Footer from './Footer'
+import React from 'react';
+import Sidebar from './Sidebar';
+import Header from './Header';
+import Footer from './Footer';
 import { Outlet } from "react-router-dom";
 
-function Layout() {
+function Layout({currentUser}) {
+    console.log("cu:",currentUser)
   return (
-    <div className="flex flex-row bg-slate-100 h-screen w-screen">
-        <div className="bg-slate-400">
-            <Sidebar />
+    <div className="flex h-screen w-screen">
+      {/* Sidebar */}
+      <div className="bg-gray-800">
+        <Sidebar />
+      </div>
+
+      {/* Main Content Area */}
+      <div className="flex flex-col flex-1">
+        {/* Header */}
+        <Header currentUser={currentUser} />
+
+        {/* Outlet */}
+        <div className="flex-1 overflow-y-auto bg-white">
+          <Outlet />
         </div>
-        <div>
-            <Header />
-        </div>
-        <div>
-            { <Outlet /> }
-        </div>
-        <div>
-            <Footer />
-        </div>
+
+        {/* Footer */}
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
